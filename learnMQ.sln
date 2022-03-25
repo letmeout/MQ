@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnMQ.Publisher", "LearnMQ.Publisher\LearnMQ.Publisher.csproj", "{D3023BF1-8B00-4745-A4D4-03FF3F5060E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnMQ.Consumer", "LearnMQ.Consumer\LearnMQ.Consumer.csproj", "{CBBC2381-B579-44D3-B69E-A97494A5685B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3023BF1-8B00-4745-A4D4-03FF3F5060E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3023BF1-8B00-4745-A4D4-03FF3F5060E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3023BF1-8B00-4745-A4D4-03FF3F5060E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3023BF1-8B00-4745-A4D4-03FF3F5060E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBBC2381-B579-44D3-B69E-A97494A5685B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBBC2381-B579-44D3-B69E-A97494A5685B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBBC2381-B579-44D3-B69E-A97494A5685B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBBC2381-B579-44D3-B69E-A97494A5685B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
