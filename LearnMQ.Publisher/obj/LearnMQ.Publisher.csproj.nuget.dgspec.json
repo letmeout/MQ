@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\LearnMQ.Publisher.csproj": {}
+    "d:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\LearnMQ.Publisher.csproj": {}
   },
   "projects": {
-    "D:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\LearnMQ.Publisher.csproj": {
+    "d:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\LearnMQ.Publisher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\LearnMQ.Publisher.csproj",
+        "projectUniqueName": "d:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\LearnMQ.Publisher.csproj",
         "projectName": "LearnMQ.Publisher",
-        "projectPath": "D:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\LearnMQ.Publisher.csproj",
+        "projectPath": "d:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\LearnMQ.Publisher.csproj",
         "packagesPath": "C:\\Users\\bfeng\\.nuget\\packages\\",
-        "outputPath": "D:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\obj\\",
+        "outputPath": "d:\\WorkFolder\\WorkSpaces\\learnMQ\\LearnMQ.Publisher\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bfeng\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,12 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Messaging.ServiceBus": {
+              "target": "Package",
+              "version": "[7.7.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
