@@ -15,10 +15,10 @@ namespace LearnMQ.Publisher
         public static string topicName = "myfirsttopic";
 
         // the client that owns the connection and can be used to create senders and receivers
-        static ServiceBusClient client;
+        // static ServiceBusClient client;
 
         // the sender used to publish messages to the queue
-        static ServiceBusSender sender;
+        // static ServiceBusSender sender;
 
         // number of messages to be sent to the queue
         private const int numOfMessages = 3;
@@ -30,8 +30,8 @@ namespace LearnMQ.Publisher
             // regularly.
             //
             // Create the clients that we'll use for sending and processing messages.
-            client = new ServiceBusClient(connectionString);
-            sender = client.CreateSender(queueName);
+            var client = new ServiceBusClient(connectionString);
+            var sender = client.CreateSender(queueName);
 
             // create a batch 
             using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();
@@ -71,8 +71,8 @@ namespace LearnMQ.Publisher
             // regularly.
             //
             // Create the clients that we'll use for sending and processing messages.
-            client = new ServiceBusClient(connectionString);
-            sender = client.CreateSender(topicName);
+            var client = new ServiceBusClient(connectionString);
+            var sender = client.CreateSender(topicName);
 
             // create a batch 
             using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();

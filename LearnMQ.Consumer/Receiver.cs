@@ -18,10 +18,10 @@ namespace LearnMQ.Consumer
         public static string subscriptionName = "S1";
 
         // the client that owns the connection and can be used to create senders and receivers
-        public static ServiceBusClient client;
+        // public static ServiceBusClient client;
 
         // the processor that reads and processes messages from the queue
-        public static ServiceBusProcessor processor;
+        // public static ServiceBusProcessor processor;
 
         // handle received messages
         public static async Task MessageHandler(ProcessMessageEventArgs args)
@@ -30,6 +30,16 @@ namespace LearnMQ.Consumer
             Console.WriteLine($"Received: {body}");
 
             // complete the message. message is deleted from the queue. 
+            await args.CompleteMessageAsync(args.Message);
+        }
+
+        // handle received messages
+        public static async Task TopicMessageHandler(ProcessMessageEventArgs args)
+        {
+            string body = args.Message.Body.ToString();
+            Console.WriteLine($"Received: {body} from subscription: {subscriptionName}");
+
+            // complete the message. messages is deleted from the subscription. 
             await args.CompleteMessageAsync(args.Message);
         }
 
@@ -48,10 +58,10 @@ namespace LearnMQ.Consumer
             //
 
             // Create the client object that will be used to create sender and receiver objects
-            client = new ServiceBusClient(connectionString);
+            var client = new ServiceBusClient(connectionString);
 
             // create a processor that we can use to process the messages
-            processor = client.CreateProcessor(queueName, new ServiceBusProcessorOptions());
+            var processor = client.CreateProcessor(queueName, new ServiceBusProcessorOptions());
 
             try
             {
@@ -88,15 +98,15 @@ namespace LearnMQ.Consumer
             // regularly.
             //
             // Create the clients that we'll use for sending and processing messages.
-            client = new ServiceBusClient(connectionString);
+            var client = new ServiceBusClient(connectionString);
 
             // create a processor that we can use to process the messages
-            processor = client.CreateProcessor(topicName, subscriptionName, new ServiceBusProcessorOptions());
+            var processor = client.CreateProcessor(topicName, subscriptionName, new ServiceBusProcessorOptions());
 
             try
             {
                 // add handler to process messages
-                processor.ProcessMessageAsync += MessageHandler;
+                processor.ProcessMessageAsync += TopicMessageHandler;
 
                 // add handler to process any errors
                 processor.ProcessErrorAsync += ErrorHandler;
